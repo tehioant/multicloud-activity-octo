@@ -1,5 +1,4 @@
 terraform {
-  required_version = "1.5.3"
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -16,12 +15,12 @@ locals {
   location = "francecentral"
 }
 
-resource "azurerm_resource_group" "reserved" {
+resource "azurerm_resource_group" "rg_tribe" {
   name     = "rg-tribe-day"
   location = local.location
 
   tags = {
-    owner        = "ante"
+    Owner        = "ante"
     restrictedTo = "ante"
     contact      = "ante@ocho.ninja"
   }
@@ -29,12 +28,15 @@ resource "azurerm_resource_group" "reserved" {
 
 resource "azurerm_storage_account" "backend" {
   name                     = "tribedayfstates"
-  resource_group_name      = azurerm_resource_group.reserved.name
+  resource_group_name      = azurerm_resource_group.rg_tribe.name
   location                 = local.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   account_kind             = "BlobStorage"
   min_tls_version          = "TLS1_2"
+  tags = {
+    Owner = "ante"
+  }
 }
 
 resource "azurerm_storage_container" "admin_container" {
