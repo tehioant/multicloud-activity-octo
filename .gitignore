@@ -37,3 +37,11 @@ terraform.rc
 
 # apple
 .idea
+
+# function app
+package-lock.json
+package.json
+
+
+# AWS
+*/AWSCLIV2.phg

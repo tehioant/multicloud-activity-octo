@@ -6,12 +6,6 @@ terraform {
       version = "3.66.0"
     }
   }
-  backend "azurerm" {
-    container_name       = "tfstates-tribeday"
-    storage_account_name = "tribedayfstates"
-    key                  = "azure.tfstate"
-    resource_group_name  = "rg-tribe-day"
-  }
 }
 
 provider "azurerm" {
