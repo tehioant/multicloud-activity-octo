@@ -5,6 +5,12 @@
     "outDir": "dist",
     "rootDir": ".",
     "sourceMap": true,
-    "strict": false
-  }
+    "strict": false,
+    "typeRoots": [ "node_modules/@types" ],
+    "noImplicitReturns": true
+  },
+  "compileOnSave": true,
+  "skipLibCheck": true,
+  "exclude": [ "node_modules", "functions" ],
+  "include": [ "**/*.ts", "**/*.tsx" ]
 }

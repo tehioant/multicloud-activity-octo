@@ -1,0 +1,13 @@
+/*
+ Octo color -->
+ */
+
+.bg-octo {
+    --tw-bg-opacity: 1;
+    background-color: rgb(14 34 86 / var(--tw-bg-opacity));
+}
+
+.my-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

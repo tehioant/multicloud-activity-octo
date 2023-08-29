@@ -29,6 +29,7 @@ resource "azurerm_linux_function_app" "alltribes_azf" {
 
   app_settings = {
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
+    ApplicationInsightsAgent_EXTENSION_VERSION = "~3"
     WEBSITE_RUN_FROM_PACKAGE            = "1"
     AAD_DOMAIN_MAIL                     = "@ocho.ninja"
     TENANT_ID                           = data.azurerm_client_config.current.tenant_id
