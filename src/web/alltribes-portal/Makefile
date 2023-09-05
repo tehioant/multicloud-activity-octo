@@ -20,7 +20,7 @@ help:
 
 .PHONY: upload-s3
 upload-s3:
-	echo "[*] 🤖 make upload-s3: s3://bucket-alltribes/alltribes-portal.zip"
+	echo "[*] 🤖 make upload-s3: s3://bucket-alltribes/alltribesportal.zip"
 	npm run build
 	zip -r alltribes-portal.zip dist
-	aws s3 cp alltribes-portal.zip s3://bucket-alltribes/alltribes-portal.zip
+	aws s3 cp alltribes-portal.zip s3://bucket-alltribes/alltribesportal.zip
