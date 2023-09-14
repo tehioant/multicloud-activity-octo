@@ -4,7 +4,7 @@ let api: AxiosInstance
 
 function createApi() {
     api = axios.create({
-        baseURL: "https://alltribes-azf.azurewebsites.net/"
+        baseURL: "https://7boquyqllnn5hgvnvtxs247bcu0yrrxc.lambda-url.eu-west-3.on.aws/"
     })
     // We set an interceptor for each request to
     // include Bearer token to the request if user is logged in
