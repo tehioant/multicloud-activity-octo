@@ -1,6 +1,6 @@
 locals {
   mandatoryTags = {
-    owner = "ante"
+    owner = "alltribes"
   }
   location = "francecentral"
 }
