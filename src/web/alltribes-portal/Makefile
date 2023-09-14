@@ -22,5 +22,5 @@ help:
 upload-s3:
 	echo "[*] 🤖 make upload-s3: s3://bucket-alltribes/alltribesportal.zip"
 	npm run build
-	zip -r alltribes-portal.zip dist
-	aws s3 cp alltribes-portal.zip s3://bucket-alltribes/alltribesportal.zip
+	#zip -r alltribes-portal.zip dist
+	aws s3 cp --recursive dist/ s3://bucket-alltribes/
