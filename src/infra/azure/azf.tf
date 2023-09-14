@@ -1,14 +1,14 @@
 resource "azurerm_storage_account" "sa_all_tribes" {
   name                     = "saalltribesday"
   resource_group_name      = azurerm_resource_group.rgalltribes.name
-  location                 = azurerm_resource_group.rgalltribes.location
+  location                 = local.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
 resource "azurerm_service_plan" "sp_all_tribes" {
   name                = "sp-all-tribes"
-  location            = azurerm_resource_group.rgalltribes.location
+  location            = local.location
   resource_group_name = azurerm_resource_group.rgalltribes.name
 
   os_type  = "Linux"
@@ -17,7 +17,7 @@ resource "azurerm_service_plan" "sp_all_tribes" {
 
 resource "azurerm_linux_function_app" "azf_all_tribes" {
   name                       = "azf-all-tribes"
-  location                   = azurerm_resource_group.rgalltribes.location
+  location                   = local.location
   resource_group_name        = azurerm_resource_group.rgalltribes.name
   service_plan_id            = azurerm_service_plan.sp_all_tribes.id
   storage_account_name       = azurerm_storage_account.sa_all_tribes.name
