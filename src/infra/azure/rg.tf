@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rgalltribes" {
   name     = "rg-alltribes"
-  location = "West Europe"
+  location = local.location
   tags = local.mandatoryTags
 }
