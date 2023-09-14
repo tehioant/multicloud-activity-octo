@@ -90,7 +90,6 @@ terraform-format:
 .PHONY: terraform-upgrade  ## 🆕 to download new providers after you manually update their version
 terraform-upgrade:
 	$(info [*] Upgrade Terraform provider versions ...)
-	terraform -chdir=backend/ init -upgrade
 	terraform -chdir=azure/ init -upgrade
 	terraform -chdir=aws/ init -upgrade
 	terraform -chdir=gcp/ init -upgrade
